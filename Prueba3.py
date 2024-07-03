@@ -30,7 +30,7 @@ while True:
     elif opc==2:
         opc_2()
     elif opc==3:
-        pass
+        opc_3()
     elif opc==4:
         pass
     elif opc==5:

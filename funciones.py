@@ -114,3 +114,17 @@ def opc_2():
     for x in pedidos:
         
         print(f"{x['nombre']}    {x['rut']}    {x['direccion']}    {x['comuna']}    {x['cilindro 5kg']}    {x['cilindro 15kg']}    {x['total']}")
+
+def opc_3():
+    print("Ingrese rut para buscar:")
+    busca=input("> ")
+
+    for x in pedidos:
+        if pedidos[x]["rut"]==busca:
+            print("Nombre      Rut      Direccion      Comuna      Cil.5kg     Cil.15kg      Total")
+            print(f"{x['nombre']}    {x['rut']}    {x['direccion']}    {x['comuna']}    {x['cilindro 5kg']}    {x['cilindro 15kg']}    {x['total']}")
+            break
+        if x==len(pedidos) and pedidos[x]["rut"]==busca:
+            break
+        elif x==len(pedidos) and pedidos[x]["rut"]!=busca:
+            print("Rut no encontrado!")
