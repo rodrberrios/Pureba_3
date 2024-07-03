@@ -12,11 +12,11 @@ def opc_1():
 
     
     print("Ingrese su Nombre:")
-    nombre=input("> ").lower
-    rut=input("Ingrese su Rut (con puntos y guion):\n> ").lower
+    nombre=input("> ")
+    rut=input("Ingrese su Rut (con puntos y guion):\n> ")
 
 
-    direccion=input("Ingrese su direccion(ejemplo: Las calles 1234):\n> ").lower
+    direccion=input("Ingrese su direccion(ejemplo: Las calles 1234):\n> ")
 
     while True:
         print("""Seleccione comuna
@@ -94,7 +94,9 @@ def opc_1():
         except:
             print("Error, ingrese opcion en numero Entero")
 
-        total=total+(contador_5*12500)+(contador_15*25.000)
+        total_5=contador_5*12500
+        total_15=contador_15*25000
+        total=total_15+total_5
 
         
         pedido={"nombre":nombre,
@@ -107,3 +109,8 @@ def opc_1():
         
         pedidos.append(pedido)
 
+def opc_2():
+    print("Nombre      Rut      Direccion      Comuna      Cil.5kg     Cil.15kg      Total")
+    for x in pedidos:
+        
+        print(f"{x['nombre']}    {x['rut']}    {x['direccion']}    {x['comuna']}    {x['cilindro 5kg']}    {x['cilindro 15kg']}    {x['total']}")

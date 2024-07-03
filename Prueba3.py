@@ -28,7 +28,7 @@ while True:
     if opc==1:
         opc_1()
     elif opc==2:
-        pass
+        opc_2()
     elif opc==3:
         pass
     elif opc==4:
