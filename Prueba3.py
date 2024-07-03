@@ -32,7 +32,10 @@ while True:
     elif opc==3:
         opc_3()
     elif opc==4:
-        pass
+        opc_4()
     elif opc==5:
         break
+
+print("Hasta luego!")
+
 

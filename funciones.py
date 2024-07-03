@@ -128,3 +128,58 @@ def opc_3():
             break
         elif x==len(pedidos) and pedidos[x]["rut"]!=busca:
             print("Rut no encontrado!")
+
+def opc_4():
+    print("Seleccione comuna a imprimir:")
+    print("1. Puente Alto")
+    print("2. San Bernardo")
+    print("3. La Pintana")
+
+    while True:
+        try:
+            menu=int(input("> "))
+            if menu in(1,2,3):
+                break
+            else:
+                print("Error!, ingrese opcion valida")
+        except:
+            print("Error!, ingrese opcion en numero entero!")
+   
+    print("ingrese nombre del archivo a extraer:")
+    nombre=input("> ")
+    nombre=nombre+(".csv")
+
+   
+   
+   
+
+    if menu==1:
+        for x in pedidos:    
+            if x['comuna']=="puente alto":
+                imprime(f"""
+Nombre      Rut      Direccion      Comuna      Cil.5kg     Cil.15kg      Total
+{x['nombre']}    {x['rut']}    {x['direccion']}    {x['comuna']}    {x['cilindro 5kg']}    {x['cilindro 15kg']}    {x['total']}""")             
+                with open(nombre,"w",newline="") as archivo:
+                    escritor=csv.writer(archivo)
+                    escritor.writerow(imprime)
+
+
+                
+    elif menu==2:
+        for x in pedidos:
+            if x['comuna']=="san bernardo":
+                imprime=(f"""
+Nombre      Rut      Direccion      Comuna      Cil.5kg     Cil.15kg      Total
+{x['nombre']}    {x['rut']}    {x['direccion']}    {x['comuna']}    {x['cilindro 5kg']}    {x['cilindro 15kg']}    {x['total']}""")      
+                with open(nombre,"w",newline="") as archivo:
+                    escritor=csv.writer(archivo)
+                    escritor.writerow(imprime)              
+    elif menu==3:
+        for x in pedidos:
+            if x['comuna']=="la pintana":
+                imprime=(f"""
+Nombre      Rut      Direccion      Comuna      Cil.5kg     Cil.15kg      Total
+{x['nombre']}    {x['rut']}    {x['direccion']}    {x['comuna']}    {x['cilindro 5kg']}    {x['cilindro 15kg']}    {x['total']}""")    
+                with open(nombre,"w",newline="") as archivo:
+                    escritor=csv.writer(archivo)
+                    escritor.writerow(imprime)
